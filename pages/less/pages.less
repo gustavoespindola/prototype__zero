@@ -1,0 +1,363 @@
+/*------------------------------------------------------------------
+Pages Frontend v1.1.1
+Theme : Default
+Generated From LESS
+[Table of contents]
+
+1. Layouts
+2. Swiper
+3. Chat
+4. Panels
+5. Fonts
+6. Typography
+7. Buttons
+8. Alerts
+9. Notification
+10. Progress & Indicators
+11. Modals
+12. Tabs & Accordians
+13. Form Elements
+14. Tables
+15. Device Morph
+16. Social Cards
+17. Gallery Components
+18. z-index
+19. Misc
+20. Demo
+21. Hover
+22. Pricing
+23. Blog
+-------------------------------------------------------------------*/
+
+// Mixins tools
+@import "mixins";
+
+// Includes of Modules
+@import "modules";
+
+// Responsive Util
+@import "responsive";
+
+//Change your theme here 
+@theme-name:"default";
+
+.theme {
+    @import "themes/default/theme.less";
+}
+.theme();
+
+//Theme Overwrite
+@base-font-family: 'europa', futura, wf_segoe-ui_light,wf_segoe-ui_normal,"Helvetica Neue", Helvetica, Arial, sans-serif;
+@body-font-size : 20px;
+@body-font-family : @base-font-family;
+
+body{
+	font-family: @base-font-family;
+	color: #111;
+}
+h1, h2, h3, h4, h5, h6{
+	color: #111;
+}
+h1, h2, h3, h4, h5, h6, .btn
+{
+	font-family: @base-font-family;
+}
+
+h1 p {
+	font-family: @base-font-family;
+	font-weight: normal;
+}
+
+@media (min-width: 1200px){
+	.container, 
+	.jumbotron .container{
+		max-width:  1080px;
+	}
+}
+
+nav{
+	z-index: 9999!important;
+	&.header.light {
+		border-bottom: 0px solid #f0f0f0;
+		background-color: white;
+	}
+
+	a.typeform-share.btn.btn-round {
+	    font-family: 'europa', futura, wf_segoe-ui_light, wf_segoe-ui_normal, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    box-shadow: 0 8px 38px -4px rgba(10, 94, 242, 0.25);
+	    font-weight: bold;
+	    border: 2px solid rgba(255, 255, 255, 0);
+	    cursor: pointer;
+	    background: #eec203;
+	    text-decoration: none;
+	    font-size: 12px;
+	    color: #111;
+	    visibility: hidden;
+	}
+
+	&.minimized{
+		a.typeform-share.btn.btn-round {
+		    visibility: visible;
+		}
+	}
+}
+
+.hero{
+	z-index: 9 !important;
+	background-color: white; 
+	h1{
+		font-weight: bold;
+	}
+	.hero-text{
+		font-size: 20px;
+		line-height: 1.5;
+		color: #111;
+	}
+	.btn{
+		font-size: 20px;
+		font-weight: normal;
+		border: 2px solid rgba(255, 255, 255, 0);
+		color: #fff;
+		cursor: pointer;
+		background-color: lighten(hsl(220, 90%, 50%), 0%);
+		text-decoration: none;
+		transition: all .3s ease;
+		box-shadow: 0 8px 38px -4px rgba(10, 94, 242,.5);
+		&:hover {
+		    background-color: lighten(hsl(220, 90%, 50%), 10%);
+		    color: white;
+		    text-decoration: none;
+			box-shadow: 0 8px 38px -4px rgba(10, 94, 242,.35) !important;
+		}
+	}
+}
+.final-cta{
+    position: relative;
+    overflow: hidden;
+    &:before{
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -180px;
+		height: 360px;
+		background: #f6f9fc;
+		-webkit-transform: skew(0,-12deg);
+		transform: skew(0,-12deg);
+		z-index: -1;
+    }
+	.btn{
+		box-shadow: 0 8px 38px 0px rgba(0, 0, 0, 0.15);
+		font-weight: bold;
+		border: 2px solid rgba(255, 255, 255, 0);
+		cursor: pointer;
+		background: #eec200;
+		color: #111;
+		text-decoration: none;
+		&:hover{
+			background-color: black;
+			color: white;
+		}
+	}
+}
+.background-image{
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	&:before {
+	    content: '';
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    bottom: 0;
+	    right: 0;
+	    z-index: 1;
+	    background-color: #fff;
+	    background-image: -o-linear-gradient(left,#fff 0,#47d3dd 100%);
+	    background: -webkit-gradient(linear, left top, right top, from(rgb(255, 255, 255)), to(rgba(71, 211, 221, 0)));
+	    background: linear-gradient(to right, rgb(255, 255, 255) 25%, rgba(71, 211, 221, 0) 100%);
+	    opacity: .5;
+	}
+	.container{
+		z-index: 2;
+		position: relative;
+	}
+}
+
+.logotypes{
+	ul.list-logotypes{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			img{
+				width: auto;
+				height: 100px;
+			}
+		}
+	}
+}
+.data{
+    border-radius: 6px;
+    box-shadow: 0 8px 38px -4px rgba(1, 35, 82, 0.1);
+    position: relative;
+    z-index: 9;
+}
+
+@media (max-width: 767px){
+	.data {
+		text-align: center;
+		margin: 0rem 1rem 1rem 1rem;
+	}
+}
+
+.user-avatar{
+	width: 60px;
+	height: 60px;
+	background-image: url('../../assets/images/mjr.jpg');
+	background-position: center;
+	background-size: cover;
+	border-radius: 100%;
+	margin-right: 10px;
+	float: left;
+}
+
+.user-excerpt{
+	float: left;
+}
+
+
+/**/
+.hero-background{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	-webkit-transform: skewY(-12deg);
+	transform: skewY(-12deg);
+	-webkit-transform-origin: 0;
+	transform-origin: 0;
+	background: linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6ffcb 94%);
+	position: absolute;
+	span{
+   		height: 40px;
+   		position: absolute;
+	}
+	:first-child {
+	    width: 50%;
+	    left: 50%;
+	    top: 40px;
+	    background: #4c29ff;
+	}
+	:nth-child(2) {
+	    width: 14%;
+	    right: 0;
+	    bottom: 40px;
+	    background: #2be7ff;
+	}
+	:nth-child(3) {
+	    width: 25%;
+	    bottom: 0;
+	    right: 0;
+	    background: #a1ffc8;
+	}
+}
+
+@media (min-width: 670px){
+	.hero-background span {
+    	height: 150px;
+	}
+	.hero-background :first-child {
+	    top: 0;
+	    background: #4750ff;
+	}
+	.hero-background :nth-child(2) {
+	    width: 16.66667%;
+	    top: 300px;
+	    bottom: auto;
+	    background: #0dcfff;
+	}
+	.hero-background :nth-child(3) {
+	    width: 33.33333%;
+	    right: auto;
+	    background: #11bdff;
+	}
+}
+
+@media (min-width: 880px){
+	.hero-background span {
+	    height: 190px;
+	}
+	.hero-background :first-child {
+	    width: 33.33333%;
+	    left: -16.66666%;
+	    background: #53f;
+	}
+	.hero-background :nth-child(2) {
+	    width: 33.33333%;
+	    top: 0;
+	    left: 16.66666%;
+	    right: auto;
+	    background: #4553ff;
+	}
+	.hero-background :nth-child(3) {
+	    width: 33.33333%;
+	    left: 49.99999%;
+	    bottom: auto;
+	    background: #4f40ff;
+	}
+	.hero-background :nth-child(4) {
+	    width: 33.33333%;
+	    top: 380px;
+	    right: -16.66666%;
+	    background: #25ddf5;
+	}
+	.hero-background :nth-child(5) {
+	    width: 33.33333%;
+	    bottom: 0;
+	    background: #1fa2ff;
+	}
+}
+
+.jumbotron {
+	h1{
+		line-height: 1.1 !important;
+	}
+
+	p {
+		font-size: 20px !important; 
+		line-height: 1.5  !important;
+	}
+}
+
+.conversational-form-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    display: block;
+    margin-left: 50%;
+    left: -320px;
+}
+
+input.form-control.h1 {
+    border: 0;
+    height: 100px;
+    padding: 0;
+    margin-bottom: 0 !important;
+}
+label{
+	font-weight: bolder;
+	margin-top: 10px;
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
